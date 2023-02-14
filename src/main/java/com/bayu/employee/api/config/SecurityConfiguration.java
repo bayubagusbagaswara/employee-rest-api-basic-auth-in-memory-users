@@ -29,9 +29,7 @@ public class SecurityConfiguration {
                             authorize.anyRequest().authenticated();
                         }
                 )
-                .formLogin()
-                .loginPage("/login").permitAll()
-                .and()
+                .formLogin(Customizer.withDefaults())
                 .logout().permitAll();
 
         return http.build();
